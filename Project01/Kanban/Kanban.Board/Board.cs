@@ -17,17 +17,9 @@ namespace Kanban.Board
             : base(actorService, actorId)
         {
         }
-      
-        protected override Task OnActivateAsync()
-        {
-            ActorEventSource.Current.ActorMessage(this, "Actor activated.");
-            return this.StateManager.TryAddStateAsync("count", 0);
-        }
-
-
         Task IBoard.Initialise(string name)
         {
-            return this.StateManager.SetStateAsync("Name", name);
+            return StateManager.SetStateAsync("Name", name);
         }
 
         Task<string> IBoard.Details()

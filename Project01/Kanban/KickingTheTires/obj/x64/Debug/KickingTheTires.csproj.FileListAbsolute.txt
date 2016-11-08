@@ -31,3 +31,7 @@ D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\bin\x64\Debug\Syste
 D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\obj\x64\Debug\KickingTheTires.csprojResolveAssemblyReference.cache
 D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\obj\x64\Debug\KickingTheTires.exe
 D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\obj\x64\Debug\KickingTheTires.pdb
+D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\bin\x64\Debug\Kanban.Board.Interfaces.dll
+D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\bin\x64\Debug\Microsoft.ServiceFabric.Actors.dll
+D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\bin\x64\Debug\Kanban.Board.Interfaces.pdb
+D:\PractiseExample\HackDays\Project01\Kanban\KickingTheTires\bin\x64\Debug\Microsoft.ServiceFabric.Actors.xml

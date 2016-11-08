@@ -21,7 +21,6 @@ namespace KickingTheTires.Controllers
 
        public Guid Post(InitialiseBoard initialiseBoard)
        {
-
            var boardId = Guid.NewGuid();
            var board = ActorProxy.Create<IBoard>(new ActorId(boardId));
            board.Initialise(initialiseBoard.Name);
@@ -31,6 +30,6 @@ namespace KickingTheTires.Controllers
 
     public class InitialiseBoard
     {
-        public string Name { get; set; };
+        public string Name { get; set; }
     }
 }

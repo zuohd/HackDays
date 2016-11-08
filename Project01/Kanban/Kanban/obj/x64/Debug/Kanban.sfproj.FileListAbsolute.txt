@@ -1,1 +1,0 @@
-D:\PractiseExample\HackDays\Project01\Kanban\Kanban\obj\x64\Debug\Kanban.sfprojResolveAssemblyReference.cache

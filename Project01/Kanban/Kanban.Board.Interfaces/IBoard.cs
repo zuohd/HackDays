@@ -13,17 +13,7 @@ namespace Kanban.Board.Interfaces
     /// </summary>
     public interface IBoard : IActor
     {
-        /// <summary>
-        /// TODO: Replace with your own actor method.
-        /// </summary>
-        /// <returns></returns>
-        Task<int> GetCountAsync();
-
-        /// <summary>
-        /// TODO: Replace with your own actor method.
-        /// </summary>
-        /// <param name="count"></param>
-        /// <returns></returns>
-        Task SetCountAsync(int count);
+        Task Initialise(string name);
+        Task<string> Details();
     }
 }

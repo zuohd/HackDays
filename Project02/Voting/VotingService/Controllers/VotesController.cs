@@ -12,8 +12,9 @@ namespace VotingService.Controllers
     public class VotesController : ApiController
     {
         public static long _requestCount = 0L;
-        private static Dictionary<string, int> _counts = new Dictionary<string, int>();
+        static Dictionary<string, int> _counts = new Dictionary<string, int>();
 
+        //GET api/votes
         [HttpGet]
         [Route("api/votes")]
         public HttpResponseMessage Get()
@@ -60,26 +61,24 @@ namespace VotingService.Controllers
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
-        [HttpGet]
-        [Route("api/{file}")]
-        public HttpResponseMessage GetFile(string file)
-        {
+        //[HttpGet]
+        //[Route("api/{file}")]
+        //public HttpResponseMessage GetFile(string file)
+        //{
 
-            string response = null;
-            string responseType = "text/html";
-            Interlocked.Increment(ref _requestCount);
-            if (file == "index.html")
-            {
-                var path = $@"..\votingServicePkg.code.1.0.0\{file}";
-                response = File.ReadAllText(path);
-            }
-            if (response != null)
-            {
-                return Request.CreateResponse(HttpStatusCode.OK, response, responseType);
-            }
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound, "file");
-            }
-        }
+        //    string response = null;
+        //    string responseType = "text/html";
+        //    Interlocked.Increment(ref _requestCount);
+        //    if (file == "index.html")
+        //    {
+        //        var path = $@"..\votingServicePkg.code.1.0.0\{file}";
+        //        response = File.ReadAllText(path);
+        //    }
+        //    if (response != null)
+        //    {
+        //        return Request.CreateResponse(HttpStatusCode.OK, response, responseType);
+        //    }
+        //    return Request.CreateResponse(HttpStatusCode.NotFound, "file");
+        //}
     }
+}

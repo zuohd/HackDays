@@ -4,7 +4,7 @@ using System.Web.Http;
 namespace VotingService.Controllers
 {
     [ServiceRequestActionFilter]
-    public class ValuesController : ApiController
+    public class VotesController : ApiController
     {
         // GET api/values 
         public IEnumerable<string> Get()

@@ -1,5 +1,5 @@
 import React , { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class Counter extends Component{
     constructor(props){
         super(props);
@@ -7,14 +7,20 @@ class Counter extends Component{
         this.onClickIncrementButton = this.onClickIncrementButton.bind(this);
         this.onClickDecrementButton = this.onClickDecrementButton.bind(this);
         this.state={
-            count:props.initValue||0
+            count:props.initValue
         }
     }
     onClickDecrementButton(){
-        this.setState({count:this.state.count-1});
+        this.updateCount(false);
     }
     onClickIncrementButton(){
-        this.setState({count:this.state.count+1});
+        this.updateCount(true);
+    }
+    updateCount(IsInCrement){
+        const previousCount=this.state.count;
+        const newValue=IsInCrement?previousCount+1:previousCount-1;
+        this.setState({count:newValue});
+        this.props.onUpdate(newValue,previousCount);
     }
 
     render() {
@@ -32,4 +38,14 @@ class Counter extends Component{
     }    
   
 }
+Counter.propTypes={
+    caption:PropTypes.string.isRequired,
+    initValue:PropTypes.number,
+    onUpdate:PropTypes.func
+};
+
+Counter.defaultProps={
+    initValue:0,
+    onUpdate:f=>f
+};
 export default Counter;

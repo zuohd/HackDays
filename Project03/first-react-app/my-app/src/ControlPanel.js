@@ -6,8 +6,7 @@ class ControlPanel extends Component{
             <div>
                 <Counter caption="First" initValue={0} />
                 <Counter caption="Second" initValue={10} />
-                <Counter caption="Three" initValue={20} />
-                
+                <Counter caption="Three" initValue={20} />                
             </div>
         );
     }

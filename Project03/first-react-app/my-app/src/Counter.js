@@ -7,7 +7,7 @@ class Counter extends Component{
         this.onClickIncrementButton = this.onClickIncrementButton.bind(this);
         this.onClickDecrementButton = this.onClickDecrementButton.bind(this);
         this.state={
-            count:props.initValue||0
+            count:props.initValue
         }
     }
     onClickDecrementButton(){
@@ -35,5 +35,9 @@ class Counter extends Component{
 Counter.propTypes={
     caption:PropTypes.string.isRequired,
     initValue:PropTypes.number
+};
+
+Counter.defaultProps={
+    initValue:0
 };
 export default Counter;

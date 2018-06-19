@@ -9,7 +9,7 @@ const counterValues={
     'Third':30
 };
 
-const CounterStore=Object.assign({},EventEmitter.protoType,{
+const CounterStore=Object.assign({},EventEmitter.prototype,{
     getCounterValues:function(){
         return counterValues;
     },
@@ -24,3 +24,15 @@ const CounterStore=Object.assign({},EventEmitter.protoType,{
     }
 
 });
+
+CounterStore.dispatchToken=AppDispatcher.register((action)=>{
+    if(action.type===ActionTypes.INCREMENT){
+        counterValues[action.counterCaption]++;
+        CounterStore.emitChange();
+    } else if(action.type===ActionTypes.DECREMENT){
+        counterValues[action.counterCaption]--;
+        CounterStore.emitChange();
+    }
+});
+
+export default CounterStore;

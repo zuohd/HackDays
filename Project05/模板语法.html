@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="soderberg">
+  <script src="lib/vue.js"></script>
+  
+
+</head>
+
+<body>
+ <div id="app">
+<!-- {{name}}
+{{name.toLowerCase()}} -->
+{{changeword}}
+<p v-if="isShow">我是动态创建和显示</p>
+<p v-show="isShow">我是动态显示</p>
+<button @click="handleClick">显示</button>
+ </div>
+ <script type="text/javascript">
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            name:"xiaoming",
+            age:20,
+            isShow:false
+        },
+        methods:{
+            handleClick:function(){
+                this.name="aaaa";
+                this.isShow=true;
+            }
+        },
+        computed:{
+            changeword:function(){
+                return this.name.substring(0,1).toUpperCase()+this.name.substring(1);
+            }
+        }
+
+})
+ </script>
+</body>
+</html>

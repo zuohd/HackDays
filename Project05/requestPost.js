@@ -13,7 +13,7 @@ var options={
     port:80,
     method:'POST',
     path:'/ajax/create/heee',
-    header:{
+    headers:{
         'Accept':'*/*'
     }
     

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ws client</title>
+</head>
+
+<body>
+    <h1>web Socket chatroom</h1>
+    <div id="chatroom" style="width:400px;height: 300px;overflow: auto;border:1px solid blue"></div>
+    <input type="text" name="saying" id="sayinginput" value="">
+    <input type="button" name="send" id="sendbutton" value="send" onclick="send()">
+    <script src="WsClient.js" ></script>
+    <script type="text/javascript">
+    function send() {
+        //sayinginput = document.querySelector("#sayinginput")
+        ws.send(sayinginput.value)
+        sayinginput.value = ''
+    }
+    document.onkeyup = function (event) {
+        if (event.keyCode == 13) {
+            send()
+        }
+    }
+</script>
+</body>
+
+</html>

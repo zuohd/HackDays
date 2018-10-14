@@ -8,7 +8,8 @@
     "async": "^2.6.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run":"node async.js"
   },
   "author": "",
   "license": "ISC"
